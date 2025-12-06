@@ -46,7 +46,7 @@
        transform: translateX(-50%); 
        font-size: 20px;
        color: gold;
-       opacity: 0.0;
+       opacity: 1.0;
      }
      
     
@@ -95,14 +95,14 @@
           contatore.innerText = "click: " + clickCount
 
           document.addEventListener("keydown", clickCount++)
-
-          if (coinCount >= 700);
+        } 
+          if (coinCount >= 700) {
             absresetCount++;
             coinCount == 0;
             absreset.innerText = "absolute resets: " + absresetCount;
-            absreset.styles.opacity = 1.0
-          
-        }
+            absreset.styles.opacity = 1.0;
+          } 
+        
       });
     }
   </script>
