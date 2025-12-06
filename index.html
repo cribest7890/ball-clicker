@@ -63,12 +63,37 @@
       var absresetCount = 0;
       var pallinaSize = 50; // dimensione iniziale della pallina
       var maxSize = Math.min(window.innerWidth, window.innerHeight); // max size per riempire lo schermo
-      
+      // Carica dati salvati
+      if (localStorage.getItem('clickCount')) {
+        clickCount = parseInt(localStorage.getItem('clickCount'));
+       }
+      if (localStorage.getItem('coinCount')) {
+        coinCount = parseInt(localStorage.getItem('coinCount'));
+       }
+      if (localStorage.getItem('absresetCount')) {
+        absresetCount = parseInt(localStorage.getItem('absresetCount'));
+       }
+      if (localStorage.getItem('pallinaSize')) {
+        pallinaSize = parseFloat(localStorage.getItem('pallinaSize'));
+        pallina.style.width = pallinaSize + "px";
+        pallina.style.height = pallinaSize + "px";
+       }
+
+// Aggiorna subito i contatori
+       contatore.innerText = "click: " + clickCount;
+       monete.innerText = "resets: " + coinCount;
+       absreset.innerText = "absolute resets: " + absresetCount;
 
 // Funzione per cambiare colore, aumentare la dimensione e verificare il reset
       document.addEventListener("click", function() {
         // Incrementa il contatore dei clic
-      
+        // Salva i dati nel localStorage
+        clickCount++
+        localStorage.setItem('clickCount', clickCount);
+        localStorage.setItem('coinCount', coinCount);
+        localStorage.setItem('absresetCount', absresetCount);
+        localStorage.setItem('pallinaSize', pallinaSize);
+      } 
 
         // Cambia il colore della pallina a caso
         var colore = "#" + Math.floor(Math.random() * 16777215).toString(16);
