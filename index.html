@@ -79,6 +79,9 @@
       } 
 // Funzione per cambiare colore, aumentare la dimensione e verificare il reset
       document.addEventListener("click", function() {
+      document.addEventListener("keydown", function() {
+        clickCount++
+      });
         // Incrementa il contatore dei clic
         // Salva i dati nel localStorage
         
@@ -110,9 +113,7 @@
           contatore.innerText = "click: " + clickCount;
         } 
           
-        document.addEventListener("keydown", function() {
-          clickCount++
-        });
+        
            
       
         
