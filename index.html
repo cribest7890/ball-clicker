@@ -98,7 +98,7 @@
         } 
           if (coinCount >= 700) {
             absresetCount++;
-            coinCount = 0;
+            coinCount -= 700;
             absreset.innerText = "absolute resets: " + absresetCount;
             absreset.styles.opacity = 1.0;
           } 
