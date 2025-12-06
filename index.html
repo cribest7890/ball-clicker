@@ -63,8 +63,20 @@
       var absresetCount = 0;
       var pallinaSize = 50; // dimensione iniziale della pallina
       var maxSize = Math.min(window.innerWidth, window.innerHeight); // max size per riempire lo schermo
-   
+      clickCount = parseInt(localStorage.getItem('clickCount')) || 0;
+      coinCount = parseInt(localStorage.getItem('coinCount')) || 0;
+      absresetCount = parseInt(localStorage.getItem('absresetCount')) || 0;
+      pallinaSize = parseFloat(localStorage.getItem('pallinaSize')) || 50;
 
+// Aggiorna i contatori iniziali
+      contatore.innerText = "click: " + clickCount;
+      monete.innerText = "resets: " + coinCount;
+      absreset.innerText = "absolute resets: " + absresetCount;
+      if (absresetCount > 0) {
+        absreset.style.opacity = 1.0;
+        pallina.style.width = pallinaSize + "px";
+        pallina.style.height = pallinaSize + "px";
+      } 
 // Funzione per cambiare colore, aumentare la dimensione e verificare il reset
       document.addEventListener("click", function() {
         // Incrementa il contatore dei clic
@@ -109,6 +121,12 @@
             absreset.style.opacity = 1.0;
           } 
         
+
+        localStorage.setItem('clickCount', clickCount);
+        localStorage.setItem('coinCount', coinCount);
+        localStorage.setItem('absresetCount', absresetCount);
+        localStorage.setItem('pallinaSize', pallinaSize);
+
       });
     }
   </script>
