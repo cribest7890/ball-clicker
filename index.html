@@ -99,6 +99,7 @@
           if (coinCount >= 700) {
             absresetCount++;
             coinCount -= 700;
+            monete.innerText = "resets: " + coinCount;
             absreset.innerText = "absolute resets: " + absresetCount;
             absreset.styles.opacity = 1.0;
           } 
