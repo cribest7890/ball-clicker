@@ -45,7 +45,17 @@
       color: gold;
       opacity: 0;
       transition: all 0.5s ease;
+    } 
+    .License {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      bottom:10px;
+      color: #d3d3d3;
     }
+      
+    
   </style>
 </head>
 <body>
@@ -54,6 +64,7 @@
   <div class="contatore">clicks: 0</div>
   <div class="monete">resets: 0</div>
   <div class="absreset">absolute resets: 0</div>
+  <div class="license">Copyright © 2025 team honey</div>
 
   <script>
     window.onload = function() {
@@ -61,6 +72,7 @@
       const contatore = document.querySelector('.contatore');
       const monete = document.querySelector('.monete');
       const absreset = document.querySelector('.absreset');
+      const license = document.querySelector('.license')
 
       let clickCount = parseInt(localStorage.getItem('clickCount')) || 0;
       let coinCount = parseInt(localStorage.getItem('coinCount')) || 0;
