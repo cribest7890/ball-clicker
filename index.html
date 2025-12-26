@@ -69,14 +69,13 @@
   <div class="license">Copyright © 2025 cribest7890</div>
 
   <script>
-    window.onload = function() {
-      // await example
-    try {
-       const user = await window.CrazyGames.SDK.user.getUser();
-       console.log(user);
-   } catch (e) {
-       console.log("Get user error: ", e);
-   }
+    window.onload = async function() {
+      try {
+        const user = await window.CrazyGames.SDK.user.getUser();
+        console.log(user);
+     } catch (e) {
+         console.log("Get user error:", e);
+     }
     
       const pallina = document.querySelector('.pallina');
       const contatore = document.querySelector('.contatore');
