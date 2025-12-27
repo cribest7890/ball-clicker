@@ -130,7 +130,16 @@
 
         const shopButton = document.getElementById("shopButton");
 
-        shopButton.addEventListener("click", function (e) {
+        
+        
+        // Salva nello storage
+        localStorage.setItem('clickCount', clickCount);
+        localStorage.setItem('coinCount', coinCount);
+        localStorage.setItem('absresetCount', absresetCount);
+        localStorage.setItem('pallinaSize', pallinaSize);
+      }
+
+      shopButton.addEventListener("click", function (e) {
           e.stopPropagation(); // evita che conti come click normale
 
           if (absresetCount >= 5) {
@@ -146,14 +155,6 @@
             alert("Non hai abbastanza absolute resets!");
         }
 });
-        
-        // Salva nello storage
-        localStorage.setItem('clickCount', clickCount);
-        localStorage.setItem('coinCount', coinCount);
-        localStorage.setItem('absresetCount', absresetCount);
-        localStorage.setItem('pallinaSize', pallinaSize);
-      }
-
       // Unico listener per click e tasti
       document.addEventListener("click", handleEvent);
       document.addEventListener("keyup", function(e) {
