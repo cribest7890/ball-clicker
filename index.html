@@ -96,7 +96,7 @@
       let coinCount = parseInt(localStorage.getItem('coinCount')) || 0;
       let absresetCount = parseInt(localStorage.getItem('absresetCount')) || 0;
       let pallinaSize = parseFloat(localStorage.getItem('pallinaSize')) || 50;
-      let clickMultiplier = parseInt(localStorage.getItem('clickMultiplier')) || 1;
+      let clickMultiplier = parseFloat(localStorage.getItem('clickMultiplier')) || 1;
       const maxSize = Math.min(window.innerWidth, window.innerHeight);
 
       // Aggiorna i contatori iniziali
